@@ -38,4 +38,14 @@ public class ProductControllers {
 		return productService.getProductById(id);
 	}
 	
+	@RequestMapping(method = RequestMethod.GET, value = "/product/name/{name}")
+	public Product getProductsByName(@PathVariable String name) {
+		return productService.getProductByName(name);
+	}
+	
+	@RequestMapping(method = RequestMethod.DELETE, value = "/product/{id}")
+	public String deleProduct(@PathVariable int id) {
+		return productService.deleteProduct(id);
+	}
+	
 }

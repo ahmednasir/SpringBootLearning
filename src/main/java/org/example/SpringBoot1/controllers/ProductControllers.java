@@ -2,6 +2,7 @@ package org.example.SpringBoot1.controllers;
 
 import java.util.List;
 
+import org.example.SpringBoot1.contants.Constants;
 import org.example.SpringBoot1.entity.Product;
 import org.example.SpringBoot1.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,8 @@ public class ProductControllers {
 	
 	@Autowired
 	private ProductService productService;
-	
+
+
 	@RequestMapping(method = RequestMethod.POST, value = "/product")
 	public Product addProduct(@RequestBody Product product) {
 		return productService.saveProduct(product);
